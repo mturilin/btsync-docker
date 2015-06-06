@@ -13,12 +13,10 @@
   "folder_defaults.use_tracker": true,
   "folder_defaults.known_hosts": "",
   "use_upnp": false,
-  "listening_port": 55555,
+  "listening_port": {{ LISTENING_PORT | default(55555) }},
   "webui": {
     "directory_root": "/btsync/",
-    "listen": "0.0.0.0:8888",
+    "listen": "0.0.0.0:{{ WEB_PORT | default(88888) }}",
     "force_https": false
-    //"ssl_certificate": "/btsync/ssl_key.crt",
-    //"ssl_private_key": "/btsync/ssl_key.key"
   }
 }
